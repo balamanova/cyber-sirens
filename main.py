@@ -3,8 +3,7 @@ from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, EmailStr, constr
 from passlib.context import CryptContext
 from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.orm import sessionmaker, Session, declarative_base
 import jwt
 import datetime
 
