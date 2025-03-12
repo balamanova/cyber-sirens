@@ -1,0 +1,3 @@
+Scriript to start locally
+
+` python3 -m uvicorn main:app --reload ` 
