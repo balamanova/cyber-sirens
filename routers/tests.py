@@ -1,8 +1,8 @@
-# cognitive_tests = [
-#     {"id": 1, "phq_9": "phq_9", "description": "Test description 1"},
-#     {"id": 2, "gad_7": "gad_7", "description": "Test description 2"}
-#     {"id": 2, "pss": "pss", "description": "Test description 2"}
-# ]
+cognitive_tests = [
+     {"id": 1, "phq_9": "phq_9", "description": "This test is a multipurpose instrument for screening, diagnosing, monitoring and measuring the severity of person's depression "},
+     {"id": 2, "gad_7": "gad_7", "description": "This test is a seven-item instrument that is used to measure or assess the severity of generalised anxiety disorder (GAD)"},
+     {"id": 3, "pss": "pss", "description": "This test is a classic stress assessment instrument, that is used to understand how different situations affect person's feelings and person's perceived stress."}
+ ]
 
 # class CognitiveTestResult(BaseModel):
 #     test_id: int
