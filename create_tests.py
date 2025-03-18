@@ -241,22 +241,21 @@ def create_cognitive_tests(db: Session):
     for test_data in cognitive_tests:
         test = Test(name=test_data['name'], description=test_data['description'])
         db.add(test)
-        db.commit()
+        db.flush()
 
         for question_data in test_data['questions']:
             question = Question(test_id=test.id, text=question_data['text'])
             db.add(question)
-            db.commit()
+            db.flush()
 
             for answer_data in question_data['answers']:
                 answer = Answer(question_id=question.id, **answer_data)
                 db.add(answer)
-            db.commit()
 
     db.commit()
 
 if __name__ == "__main__":
-    db = SessionLocal()
+    db = SessionLocal() as db:
     create_cognitive_tests(db)
 
 
