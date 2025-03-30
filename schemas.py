@@ -22,4 +22,12 @@ class MoodEntryResponse(BaseModel):
     user_id: int
     mood_id: int 
     timestamp: datetime 
-    
+
+class UserResponse(BaseModel):
+    id: int
+    email: str
+    name: str
+    age: int
+    gender: str
+    class Config:
+        orm_mode = True
