@@ -255,7 +255,7 @@ def create_cognitive_tests(db: Session):
     db.commit()
 
 if __name__ == "__main__":
-    db = SessionLocal() as db:
-    create_cognitive_tests(db)
+    with SessionLocal() as db:
+        create_cognitive_tests(db)
 
 

@@ -267,11 +267,9 @@ async def calculate_result(test_result: CognitiveTestResult):
     test = next((test for test in cognitive_tests if test["name"] == test_result.test_name), None)
     if not test:
         raise HTTPException(status_code=404, detail="Test not found")
-
-total_score = sum(test["questions"][i]["answers"][answer]["score"] for i, answer in enumerate(test_result.answers))
-
-result_message = ""
-if test["name"] == "phq_9":
+    total_score = sum(test["questions"][i]["answers"][answer]["score"] for i, answer in enumerate(test_result.answers))
+    result_message = ""
+    if test["name"] == "phq_9":
         if total_score <= 4:
             result_message = "Minimal depression"
         elif total_score <= 9:
@@ -282,8 +280,7 @@ if test["name"] == "phq_9":
             result_message = "Moderately severe depression"
         else:
             result_message = "Severe depression"
-elif test["name"] == "gad_7":
-
+    elif test["name"] == "gad_7":
         if total_score <= 4:
             result_message = "Minimal anxiety"
         elif total_score <= 9:
@@ -292,13 +289,11 @@ elif test["name"] == "gad_7":
             result_message = "Moderate anxiety"
         else:
             result_message = "Severe anxiety"
-elif test["name"] == "pss":
-
+    elif test["name"] == "pss":
         if total_score <= 13:
             result_message = "Low stress"
         elif total_score <= 26:
             result_message = "Moderate stress"
         else:
             result_message = "High stress"
-
-return result_message
+    return result_message
