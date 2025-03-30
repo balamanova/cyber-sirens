@@ -21,6 +21,7 @@ class MoodEntry(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False, index=True)
     mood_id = Column(Integer, nullable=False)
     timestamp = Column(DateTime, default=datetime.utcnow, nullable=False)
+    user_comment = Column(String, nullable=True) 
 
     user = relationship("User")
 
@@ -34,6 +35,7 @@ class TestSubmission(Base):
     submitted_at = Column(DateTime, default=datetime.utcnow)
 
     user = relationship("User")
+    
 Base.metadata.create_all(bind=engine)
 
 

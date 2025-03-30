@@ -51,3 +51,15 @@ class TestSubmissionCreate(BaseModel):
     user_id: int
     score: int
 
+class MoodInfo(BaseModel):
+    name: str
+    user_comment: Optional[str] = None
+    description: Optional[str] = None
+    image_url: Optional[str] = None
+
+class MoodEntryResponse(BaseModel):
+    datetime: datetime
+    mood: Optional[MoodInfo] = None
+
+    class Config:
+        orm_mode = True
