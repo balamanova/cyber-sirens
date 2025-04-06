@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr, constr
-from typing import Optional
+from typing import Optional, List
 from datetime import datetime
 
 class RegisterRequest(BaseModel):
@@ -23,6 +23,7 @@ class MoodEntryResponse(BaseModel):
     mood_id: int 
     timestamp: datetime 
 
+
 class UserResponse(BaseModel):
     id: int
     email: str
@@ -31,3 +32,22 @@ class UserResponse(BaseModel):
     gender: Optional[str] = None
     class Config:
         orm_mode = True
+
+class Answer(BaseModel):
+    text: str
+    score: int
+
+class Question(BaseModel):
+    text: str
+    answers: List[Answer]
+
+class CognitiveTest(BaseModel):
+    name: str
+    description: str
+    questions: List[Question]
+    
+class TestSubmissionCreate(BaseModel):
+    test_id: str
+    user_id: int
+    score: int
+
