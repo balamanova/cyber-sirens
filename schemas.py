@@ -23,6 +23,16 @@ class MoodEntryResponse(BaseModel):
     mood_id: int 
     timestamp: datetime 
 
+
+class UserResponse(BaseModel):
+    id: int
+    email: str
+    name: Optional[str] = None
+    age: Optional[int] = None
+    gender: Optional[str] = None
+    class Config:
+        orm_mode = True
+
 class Answer(BaseModel):
     text: str
     score: int
@@ -40,3 +50,4 @@ class TestSubmissionCreate(BaseModel):
     test_id: str
     user_id: int
     score: int
+
