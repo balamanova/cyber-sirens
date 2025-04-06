@@ -26,8 +26,8 @@ class MoodEntryResponse(BaseModel):
 class UserResponse(BaseModel):
     id: int
     email: str
-    name: str
-    age: int
-    gender: str
+    name: Optional[str] = None
+    age: Optional[int] = None
+    gender: Optional[str] = None
     class Config:
         orm_mode = True
