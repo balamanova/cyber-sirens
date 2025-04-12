@@ -16,7 +16,7 @@ emotions = [
 
 cognitive_tests = [
     {"id": 1, "phq_9": "phq_9", "description": "Test description 1"},
-    {"id": 2, "gad_7": "gad_7", "description": "Test description 2"}
+    {"id": 2, "gad_7": "gad_7", "description": "Test description 2"},
     {"id": 2, "pss": "pss", "description": "Test description 2"}
 ]
 
@@ -62,3 +62,35 @@ async def submit_result(result: CognitiveTestResult):
     
     result_message = "less stress" if result.score < 50 else "high stress"
     return {"message": "Success", "result": result_message}
+
+
+quotes = [
+    {
+        "id": 1,
+        "date": "2025-04-12",
+        "text": "Жизнь — это то, что с тобой происходит, пока ты строишь планы.",
+        "article_url": "https://example.com/articles/life-plans"
+    },
+    {
+        "id": 2,
+        "date": "2025-04-11",
+        "text": "Счастье — это когда то, что ты думаешь, говоришь и делаешь, находится в гармонии.",
+        "article_url": "https://example.com/articles/harmony"
+    },
+    {
+        "id": 3,
+        "date": "2025-04-10",
+        "text": "Ты не можешь остановить волны, но можешь научиться серфить.",
+        "article_url": "https://example.com/articles/surfing-life"
+    }
+]
+
+class Quote(BaseModel):
+    id: int
+    date: str
+    text: str
+    article_url: str
+
+@app.get("/quotes", response_model=List[Quote])
+async def get_quotes():
+    return quotes
