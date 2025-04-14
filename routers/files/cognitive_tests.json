@@ -1,6 +1,6 @@
 [
   {
-    "name": "phq_9",
+    "name": "Depression",
     "description": "The PHQ-9 is a multipurpose instrument for screening, diagnosing, monitoring and measuring the severity of a person's depression",
     "questions": [
       {
@@ -24,7 +24,7 @@
     ]
   },
   {
-    "name": "gad_7",
+    "name": "Anxiety",
     "description": "This test is a seven-item instrument that is used to measure or assess the severity of generalized anxiety disorder (GAD)",
     "questions": [
       {
@@ -38,6 +38,30 @@
       },
       {
         "text": "How often have you not been able to stop or control worrying?",
+        "answers": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Stress",
+    "description": "This test helps assess your current level of stress and how it may be affecting your daily life. It is not a diagnosis, but a tool to better understand your emotional state.",
+    "questions": [
+      {
+        "text": "How often have you felt overwhelmed or unable to cope with the demands of daily life?",
+        "answers": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      },
+      {
+        "text": "How often have you experienced difficulty relaxing or felt constantly tense?",
         "answers": [
           { "text": "Not at all", "score": 0 },
           { "text": "Several days", "score": 1 },

@@ -12,13 +12,14 @@ from schemas import MoodEntryResponse, MoodInfo
 router = APIRouter()
 
 moods: Dict[int, Dict[str, str]] = {
-    1: {"name": "Любовь", "description": "Чувство привязанности, заботы и теплоты к кому-то или чему-то.", "image_url": "https://example.com/love.jpg"},
-    2: {"name": "Радость", "description": "Чувство удовлетворения, счастья и веселья.", "image_url": "https://example.com/joy.jpg"},
-    3: {"name": "Печаль", "description": "Чувство грусти, утраты или разочарования.", "image_url": "https://example.com/sadness.jpg"},
-    4: {"name": "Безразличие", "description": "Отсутствие интереса или эмоций по отношению к чему-то.", "image_url": "https://example.com/indifference.jpg"},
-    5: {"name": "Страх", "description": "Чувство тревоги, беспокойства или опасения.", "image_url": "https://example.com/fear.jpg"},
-    6: {"name": "Гнев", "description": "Сильное раздражение или недовольство.", "image_url": "https://example.com/anger.jpg"},
+    1: {"name": "Love", "description": "A feeling of attachment, care, and warmth towards someone or something.", "image_url": "https://example.com/love.jpg"},
+    2: {"name": "Joy", "description": "A feeling of satisfaction, happiness, and cheerfulness.", "image_url": "https://example.com/joy.jpg"},
+    3: {"name": "Sadness", "description": "A feeling of sorrow, loss, or disappointment.", "image_url": "https://example.com/sadness.jpg"},
+    4: {"name": "Indifference", "description": "A lack of interest or emotion towards something.", "image_url": "https://example.com/indifference.jpg"},
+    5: {"name": "Fear", "description": "A feeling of anxiety, worry, or apprehension.", "image_url": "https://example.com/fear.jpg"},
+    6: {"name": "Anger", "description": "A strong feeling of irritation or displeasure.", "image_url": "https://example.com/anger.jpg"},
 }
+
 
 class MoodData(BaseModel):
     user_id: int

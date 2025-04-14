@@ -10,7 +10,7 @@ user_router = APIRouter()
 @user_router.post("/register")
 def register(request: RegisterRequest, db: Session = Depends(get_db)):
     hashed_password = hash_password(request.password)
-    user = User(email=request.email, hashed_password=hashed_password)
+    user = User(email=request.email, hashed_password=hashed_password, name=request.name)
     db.add(user)
     db.commit()
     db.refresh(user)
@@ -20,7 +20,7 @@ def register(request: RegisterRequest, db: Session = Depends(get_db)):
 def login(request: LoginRequest, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.email == request.email).first()
     if not user or not verify_password(request.password, user.hashed_password):
-        raise HTTPException(status_code=400, detail="Invalid credentials")
+        raise HTTPException(status_code=400, detail="Your credentials is invalid")
     token = create_jwt_token(user.id)
     return {"token": token, "message": "Login successful"}
 

@@ -4,7 +4,8 @@ from datetime import datetime
 
 class RegisterRequest(BaseModel):
     email: EmailStr
-    password: constr(min_length=6)
+    password: constr(min_length=6) 
+    name: Optional[str] = None
 
 class LoginRequest(BaseModel):
     email: EmailStr
