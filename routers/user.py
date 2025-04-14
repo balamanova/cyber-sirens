@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from db import get_db
 from models import User
-from schemas import RegisterRequest, LoginRequest, EditUserRequest
+from schemas import RegisterRequest, LoginRequest, EditUserRequest, UserResponse
 from utils import hash_password, verify_password, create_jwt_token
 
 user_router = APIRouter()
@@ -36,3 +36,10 @@ def edit_user(request: EditUserRequest, db: Session = Depends(get_db)):
     
     db.commit()
     return {"message": "User updated successfully"}
+
+@user_router.get("/users/{user_id}", response_model=UserResponse)
+async def get_user_by_id(user_id: int, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    return user

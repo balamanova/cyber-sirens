@@ -1,0 +1,50 @@
+[
+  {
+    "name": "phq_9",
+    "description": "The PHQ-9 is a multipurpose instrument for screening, diagnosing, monitoring and measuring the severity of a person's depression",
+    "questions": [
+      {
+        "text": "How often have you been bothered by little interest or pleasure in doing things?",
+        "answers": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      },
+      {
+        "text": "How often have you been feeling down, depressed, or hopeless?",
+        "answers": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "gad_7",
+    "description": "This test is a seven-item instrument that is used to measure or assess the severity of generalized anxiety disorder (GAD)",
+    "questions": [
+      {
+        "text": "How often have you been feeling nervous, anxious, or on edge?",
+        "answers": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      },
+      {
+        "text": "How often have you not been able to stop or control worrying?",
+        "answers": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      }
+    ]
+  }
+]
