@@ -48,7 +48,7 @@ class CognitiveTest(BaseModel):
     questions: List[Question]
     
 class TestSubmissionCreate(BaseModel):
-    test_id: int
+    test_id: str
     user_id: int
     score: int
 
