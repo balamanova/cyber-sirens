@@ -4,7 +4,7 @@ from datetime import datetime
 
 class RegisterRequest(BaseModel):
     email: EmailStr
-    password: constr(min_length=6) 
+    password: constr(min_length=6)
     name: Optional[str] = None
 
 class LoginRequest(BaseModel):
@@ -64,3 +64,12 @@ class MoodEntryResponse(BaseModel):
 
     class Config:
         orm_mode = True
+
+class Quote(BaseModel):
+    id: int
+    date: str
+    text: str
+
+class Article(BaseModel):
+    quote_id: int
+    url: str
