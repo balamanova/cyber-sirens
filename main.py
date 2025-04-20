@@ -5,7 +5,11 @@ from routers.tests import test_router as test_router
 from routers.articles import articles_router as articles_router
 from routers.quotes import quotes_router as quotes_router
 
+
 app = FastAPI()
+
+from routers import tests
+
 
 app.include_router(user_router)
 app.include_router(mood_router)
