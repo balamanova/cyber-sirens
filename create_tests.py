@@ -4,7 +4,7 @@ from db import SessionLocal
 
 cognitive_tests = [
     {
-        "name": "phq_9",
+        "name": "Depression",
         "description": "The PHQ-9 is a multipurpose instrument for screening, diagnosing, monitoring and measuring the severity of person's depression",
         "questions": [
             {
@@ -91,7 +91,7 @@ cognitive_tests = [
         ]
     },
         {
-        "name": "gad_7",
+        "name": "Anxiety",
         "description": "This test is a seven-item instrument that is used to measure or assess the severity of generalized anxiety disorder (GAD)",
         "questions": [
             {
@@ -160,7 +160,7 @@ cognitive_tests = [
         ]
     },
         {
-        "name": "pss",
+        "name": "Stress",
         "description": "This test is a classic stress assessment instrument, that is used to understand how different situations affect person's feelings and person's perceived stress",
         "questions": [
             {

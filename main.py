@@ -8,7 +8,7 @@ from routers.quotes import quotes_router as quotes_router
 
 app = FastAPI()
 
-from routers import tests
+
 
 
 app.include_router(user_router)
