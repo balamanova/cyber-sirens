@@ -43,7 +43,7 @@ async def submit_test_result(submission: TestSubmissionCreate, db: Session = Dep
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-    return {"message": "Test result submitted successfully", "submission_id": new_submission.id,"result": result}
+    return result
 
 
 def handle_test_submission(submission: TestSubmissionCreate) -> TestResultResponse:
