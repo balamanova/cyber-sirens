@@ -47,11 +47,11 @@ async def submit_test_result(submission: TestSubmissionCreate, db: Session = Dep
 
 
 def handle_test_submission(submission: TestSubmissionCreate) -> TestResultResponse:
-    if submission.test_id == "phq_9":
+    if submission.test_id == "Depression":
         return interpret_phq9(submission.score)
-    elif submission.test_id == "gad_7":
+    elif submission.test_id == "Anxiety":
         return interpret_gad7(submission.score)
-    elif submission.test_id == "pss":
+    elif submission.test_id == "Stress":
         return interpret_pss(submission.score)
     else:
         raise ValueError("Unknown test type")
