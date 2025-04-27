@@ -43,15 +43,15 @@ async def submit_test_result(submission: TestSubmissionCreate, db: Session = Dep
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-    return {"message": "Test result submitted successfully", "submission_id": new_submission.id,"result": result}
+    return result
 
 
 def handle_test_submission(submission: TestSubmissionCreate) -> TestResultResponse:
-    if submission.test_id == "phq_9":
+    if submission.test_id == "Depression":
         return interpret_phq9(submission.score)
-    elif submission.test_id == "gad_7":
+    elif submission.test_id == "Anxiety":
         return interpret_gad7(submission.score)
-    elif submission.test_id == "pss":
+    elif submission.test_id == "Stress":
         return interpret_pss(submission.score)
     else:
         raise ValueError("Unknown test type")
